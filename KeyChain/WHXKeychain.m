@@ -10,6 +10,7 @@
 
 @implementation WHXKeychain
 
+// 获取
 + (NSMutableDictionary *)getKeychainQuery:(NSString *)service {
     return [NSMutableDictionary dictionaryWithObjectsAndKeys:
             (id)kSecClassGenericPassword,(id)kSecClass,
@@ -19,6 +20,7 @@
             nil];
 }
 
+// 保存
 +(void)save:(NSString *)service data:(id)data
 {
     //Get search dictionary
