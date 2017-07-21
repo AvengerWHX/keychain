@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "WHXKeychainManager.h"
 @interface ViewController ()
 
 @end
@@ -24,4 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)settingButton:(id)sender {
+    
+    [WHXKeychainManager savePsd:_textfield.text username:@"武鹤欣"];
+    _psdLabel.text = [WHXKeychainManager readPassWordAndUsername];
+    
+}
 @end
